@@ -5,14 +5,16 @@
 /****** General ***********/
 * {
     font-family: 'Syne', sans-serif !important;
+    font-weight: 400;
 }
 
 :root {
     --couleur-primaire: #DC9F96;
     --couleur-primaire-plus-claire: #E0B9B4;
     --couleur-primaire-plus-foncee: #D2776A;
-    --couleur-primaire-bg: #DEEBFF;
+    --couleur-bg: #ECE2DA;
     --couleur-secondaire: #3B8E46;
+    --couleur-bt-commander-hover: #C02E44;
 }
 
 body {
@@ -28,9 +30,132 @@ div#wrapper {
     background-color: white;
 }
 
+section {
+    padding: 4.688rem;
+    margin:0 !important;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 2.375rem;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 1.875rem;
+}
+
+p {
+    line-height: normal;
+}
+
+.wp-element-button {
+    padding: 20px 55px;
+    font-size: 0.938rem;
+    font-weight: 400;
+    border-radius: 5px;
+    background-color: var(--couleur-primaire-plus-claire);
+
+}
+
 a {
     color: inherit;
     text-decoration: none;
 }
 
+header, footer {
+    font-size: 1rem;
+}
+
+:root :where(.is-layout-constrained) > * {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+:root :where(.is-layout-flex) {
+    gap: 0;
+}
+
 /****** Header ***********/
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul li, header nav ul li a {
+    display: inline-block;
+}
+
+header nav ul li a {
+    padding: 1.875rem;
+    
+}
+header nav ul li.bt-commander-nav a {
+    padding: 1.875rem 3.75rem;
+}
+
+header nav ul li.bt-commander-nav a:hover {
+    background-color: var(--couleur-bt-commander-hover);
+}
+
+.bt-commander-nav {
+    margin-left: 1.875rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: var(--couleur-primaire);
+}
+#branding {
+    padding-left: 2.313rem;
+}
+
+/****** Accueil ***********/
+
+.custom-accueil h1, h2 {
+    color: var(--couleur-secondaire);
+    text-align: center;
+}
+
+.custom-accueil section.top {
+    height: 905px;
+    padding-top:7.188rem;
+    background-image: url(../images/canette-planty.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position-y: 65px;
+    background-color: var(--couleur-bg);
+}
+
+.custom-accueil section.energie-plantes p {
+    margin-top: 45px !important;
+    font-size:1.25rem;
+}
+
+.custom-accueil section.gouts {
+    background-color: var(--couleur-bg);
+}
+
+.custom-accueil section.gouts h3 {
+    color: var(--couleur-primaire-plus-foncee);
+    font-weight: 800;
+    font-size:1.875rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.custom-accueil section.gouts p {
+    font-size:1.25rem;
+}
+
+.custom-accueil section.gouts figure.wp-block-gallery {
+    width:816px;
+    margin:48px auto;
+}
+
+/****** Footer ***********/
+footer {
+    text-align: center;
+    padding: 1.875rem;
+}
