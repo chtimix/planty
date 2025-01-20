@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap');
 
 /****** General ***********/
 * {
@@ -9,12 +10,12 @@
 }
 
 :root {
-    --couleur-primaire: #DC9F96;
-    --couleur-primaire-plus-claire: #E0B9B4;
-    --couleur-primaire-plus-foncee: #D2776A;
-    --couleur-bg: #ECE2DA;
-    --couleur-secondaire: #3B8E46;
-    --couleur-bt-commander-hover: #C02E44;
+    --primary-color: #DC9F96;
+    --light-primary-color: #E0B9B4;
+    --dark-primary-color: #D2776A;
+    --bg-color: #ECE2DA;
+    --secondary-color: #3B8E46;
+    --bt-order-hover: #C02E44;
 }
 
 body {
@@ -33,6 +34,10 @@ div#wrapper {
 section {
     padding: 4.688rem;
     margin:0 !important;
+}
+
+h1,h2, h3, h4 {
+    text-align: center;
 }
 
 h1 {
@@ -55,9 +60,14 @@ p {
     padding: 20px 55px;
     font-size: 0.938rem;
     font-weight: 400;
-    border-radius: 5px;
-    background-color: var(--couleur-primaire-plus-claire);
+    color:white;
+    border-radius: 5px !important;
+    border:none;
+    background-color: var(--light-primary-color);
+}
 
+.wp-element-button:hover {
+    background-color: var(--bt-order-hover);
 }
 
 a {
@@ -99,14 +109,14 @@ header nav ul li.bt-commander-nav a {
 }
 
 header nav ul li.bt-commander-nav a:hover {
-    background-color: var(--couleur-bt-commander-hover);
+    background-color: var(--bt-order-hover);
 }
 
 .bt-commander-nav {
     margin-left: 1.875rem;
     font-weight: 700;
     color: #ffffff;
-    background-color: var(--couleur-primaire);
+    background-color: var(--primary-color);
 }
 #branding {
     padding-left: 2.313rem;
@@ -114,8 +124,8 @@ header nav ul li.bt-commander-nav a:hover {
 
 /****** Accueil ***********/
 
-.custom-accueil h1, h2 {
-    color: var(--couleur-secondaire);
+.custom-accueil h1, .custom-accueil h2 {
+    color: var(--secondary-color);
     text-align: center;
 }
 
@@ -126,7 +136,7 @@ header nav ul li.bt-commander-nav a:hover {
     background-repeat: no-repeat;
     background-size: auto;
     background-position-y: 65px;
-    background-color: var(--couleur-bg);
+    background-color: var(--bg-color);
 }
 
 .custom-accueil section.energie-plantes p {
@@ -135,11 +145,11 @@ header nav ul li.bt-commander-nav a:hover {
 }
 
 .custom-accueil section.gouts {
-    background-color: var(--couleur-bg);
+    background-color: var(--bg-color);
 }
 
 .custom-accueil section.gouts h3 {
-    color: var(--couleur-primaire-plus-foncee);
+    color: var(--dark-primary-color);
     font-weight: 800;
     font-size:1.875rem;
     text-transform: uppercase;
@@ -155,7 +165,134 @@ header nav ul li.bt-commander-nav a:hover {
     margin:48px auto;
 }
 
+
+/****** Commander ***********/
+
+
+#page-commander {
+    color:white;
+    background-color: var(--secondary-color);
+    padding: 0;
+}
+
+#page-commander h1 {
+    margin-bottom: 4.688rem;
+}
+
+#page-commander h2 {
+    text-align: left;
+    margin-bottom: 2.5rem;
+}
+
+#page-commander label {
+    display: block;
+    font-size:1.25rem;
+}
+
+#page-commander #infos-livraison p {
+    margin-bottom: 2.5rem;
+}
+
+#page-commander form input {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1rem;
+    font-style: normal;
+    border:none;
+}
+
+#page-commander #produits input {
+    margin-top:0.938rem;
+    height: 56px;
+    width:39px;
+    text-align: center;
+}
+
+/* affichage spin button produit */
+#page-commander input[type="number"]::-webkit-inner-spin-button,
+#page-commander input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: auto;
+    appearance: auto;
+    opacity: 1;
+}
+
+#page-commander #infos-livraison input {
+    width: 383px;
+    height: 71px;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#page-commander form {
+    width: 860px;
+    margin: 0 auto;
+}
+
+#page-commander form section {
+    padding: 2.813rem 0 0 0;
+}
+
+#page-commander #votre-commande {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+#page-commander #produits {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#page-commander .produit {
+    width: 192px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+#page-commander #produits img {
+    width: 100%;
+    height: auto;
+}
+
+#page-commander #infos-livraison {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position:relative;
+}
+
+/* filet vertical */
+#page-commander #infos-livraison::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: #ffffff; /* Le filet */
+    transform: translateX(-50%);
+    margin-top: 2.813rem;
+    margin-bottom: 2.5rem;
+}
+
+#page-commander #infos, #page-commander #livraison {
+    width: 383px;
+}
+
+#page-commander #commander {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#page-commander .wpcf7-spinner {
+    display: none !important;
+    visibility: hidden !important;
+}
+
 /****** Footer ***********/
+
 footer {
     text-align: center;
     padding: 1.875rem;
