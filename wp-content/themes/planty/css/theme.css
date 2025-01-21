@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap');
 
-/****** General ***********/
+/*********** General ***********/
 * {
     font-family: 'Syne', sans-serif !important;
     font-weight: 400;
@@ -32,11 +32,11 @@ div#wrapper {
 }
 
 section {
-    padding: 4.688rem;
+    padding: 4.688rem 1.25rem;
     margin:0 !important;
 }
 
-h1,h2, h3, h4 {
+h1, h2, h3, p {
     text-align: center;
 }
 
@@ -51,10 +51,19 @@ h2 {
     font-size: 1.875rem;
 }
 
+h3 {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
 p {
+    font-size: 1.25rem;
     line-height: normal;
 } 
 
+form p {
+    text-align: left;
+}
 
 .wp-element-button {
     padding: 20px 55px;
@@ -87,7 +96,39 @@ header, footer {
     gap: 0;
 }
 
-/****** Header ***********/
+form input[type="text"],form input[type="email"], form textarea {
+    width: 383px;
+    height: 71px;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 0.938rem;
+    border:none;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1rem;
+    font-style: normal;
+}
+
+form textarea {
+    height: 237px;
+}
+
+form label {
+    font-size:1.25rem;
+}
+
+form #submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+form .wpcf7-spinner {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+
+/*********** Header ***********/
 
 header {
     display: flex;
@@ -122,11 +163,10 @@ header nav ul li.bt-commander-nav a:hover {
     padding-left: 2.313rem;
 }
 
-/****** Accueil ***********/
+/*********** Accueil ***********/
 
 .custom-accueil h1, .custom-accueil h2 {
     color: var(--secondary-color);
-    text-align: center;
 }
 
 .custom-accueil section.top {
@@ -165,15 +205,99 @@ header nav ul li.bt-commander-nav a:hover {
     margin:48px auto;
 }
 
-/****** Nous rencontrer ***********/
+/*********** Nous rencontrer ***********/
+
+#page-nous-rencontrer .section-title, #page-nous-rencontrer .section-nous-contacter {
+    background-color: var(--bg-color);
+}
+
+#page-nous-rencontrer .section-title {
+    padding-top: 12rem;
+}
+
+#page-nous-rencontrer .titre-illustration {
+    display: inline-block;
+    width:55%;
+    position: relative;
+}
+
+#page-nous-rencontrer h1 {
+    color: var(--dark-primary-color);
+}
+
+#page-nous-rencontrer .section-title figure {
+    position:absolute;
+    top:-120px;
+    left:-190px;
+}
+
+#page-nous-rencontrer .section-title p {
+    width:55%;
+    margin-top:2.5rem;
+}
 
 
+#page-nous-rencontrer h2 {
+    margin-bottom: 2.813rem;
+}
 
+#page-nous-rencontrer h3 {
+    margin: 1.875rem 0 0.938rem 0;
+}
 
+#page-nous-rencontrer .section-title {
+    border-radius: 0% 0% 33% 33% / 0% 0% 33% 33%;
+}
 
+#page-nous-rencontrer form p {
+    margin-bottom: 1.563rem;
+}
 
+#page-nous-rencontrer .section-equipe {
+    position:relative;
+    background-color: transparent;
+}
+#page-nous-rencontrer .section-equipe .membres-equipe {
+    z-index:1;
+}
 
-/****** Commander ***********/
+#page-nous-rencontrer .section-equipe figure.branche {
+    position:absolute;
+    z-index: 0;
+    bottom: 0;
+    right:30px;
+}
+
+#page-nous-rencontrer .section-nous-contacter {
+    padding-bottom: 0rem;
+}
+
+#page-nous-rencontrer .frise {
+    overflow: hidden;
+    background-color: var(--bg-color);
+}
+
+#page-nous-rencontrer .frise figure {
+    width: 1440px;
+}
+
+#page-nous-rencontrer .frise img {
+    object-fit: none;
+}
+
+#page-nous-rencontrer .section-nous-contacter .form-illustration {
+    position: relative;
+    z-index: 0;
+}
+
+#page-nous-rencontrer figure.feuilles {
+    position: absolute;
+    z-index: -1;
+    bottom:50px;
+    left:-90px;
+}
+
+/*********** Commander ***********/
 
 
 #page-commander {
@@ -191,22 +315,6 @@ header nav ul li.bt-commander-nav a:hover {
     margin-bottom: 2.5rem;
 }
 
-#page-commander label {
-    display: block;
-    font-size:1.25rem;
-}
-
-#page-commander #infos-livraison p {
-    margin-bottom: 2.5rem;
-}
-
-#page-commander form input {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 1rem;
-    font-style: normal;
-    border:none;
-}
-
 #page-commander #produits input {
     margin-top:0.938rem;
     height: 56px;
@@ -220,13 +328,6 @@ header nav ul li.bt-commander-nav a:hover {
     -webkit-appearance: auto;
     appearance: auto;
     opacity: 1;
-}
-
-#page-commander #infos-livraison input {
-    width: 383px;
-    height: 71px;
-    border-radius: 5px;
-    padding: 20px;
 }
 
 #page-commander form {
@@ -269,6 +370,10 @@ header nav ul li.bt-commander-nav a:hover {
     position:relative;
 }
 
+#page-commander #infos-livraison p {
+    margin-bottom: 2.5rem;
+}
+
 /* filet vertical */
 #page-commander #infos-livraison::before {
     content: "";
@@ -287,20 +392,14 @@ header nav ul li.bt-commander-nav a:hover {
     width: 383px;
 }
 
-#page-commander #commander {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
 
-#page-commander .wpcf7-spinner {
-    display: none !important;
-    visibility: hidden !important;
-}
-
-/****** Footer ***********/
+/*********** Footer ***********/
 
 footer {
     text-align: center;
     padding: 1.875rem;
+}
+
+footer p {
+    font-size: 1rem;
 }
