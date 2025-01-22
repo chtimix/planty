@@ -108,6 +108,13 @@ form input[type="text"],form input[type="email"], form textarea {
     font-style: normal;
 }
 
+form input {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1rem;
+    font-style: normal;
+}
+
+
 form textarea {
     height: 237px;
 }
@@ -125,6 +132,21 @@ form #submit {
 form .wpcf7-spinner {
     display: none !important;
     visibility: hidden !important;
+}
+
+/* frise */
+
+.frise {
+    overflow: hidden;
+    background-color: var(--bg-color);
+}
+
+.frise figure {
+    width: 1440px;
+}
+
+.frise img {
+    object-fit: none;
 }
 
 
@@ -165,30 +187,31 @@ header nav ul li.bt-commander-nav a:hover {
 
 /*********** Accueil ***********/
 
-.custom-accueil h1, .custom-accueil h2 {
+#page-accueil h1, #page-accueil h2 {
     color: var(--secondary-color);
 }
 
-.custom-accueil section.top {
-    height: 905px;
+#page-accueil  section.title {
     padding-top:7.188rem;
-    background-image: url(../images/canette-planty.png);
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position-y: 65px;
     background-color: var(--bg-color);
 }
 
-.custom-accueil section.energie-plantes p {
+#page-accueil section.title {
+    border-radius: 0% 0% 50% 50% / 0% 0% 8% 8%;
+}
+
+#page-accueil section.energie-plantes p {
     margin-top: 45px !important;
     font-size:1.25rem;
 }
 
-.custom-accueil section.gouts {
+#page-accueil section.gouts {
     background-color: var(--bg-color);
+    border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
+
 }
 
-.custom-accueil section.gouts h3 {
+#page-accueil section.gouts h3 {
     color: var(--dark-primary-color);
     font-weight: 800;
     font-size:1.875rem;
@@ -196,13 +219,37 @@ header nav ul li.bt-commander-nav a:hover {
     margin-bottom: 1rem;
 }
 
-.custom-accueil section.gouts p {
+#page-accueil section.gouts h4 {
+    font-weight: 800;
+    font-size:3rem;
+    text-transform: uppercase;
+}
+
+#page-accueil section.gouts p {
     font-size:1.25rem;
 }
 
-.custom-accueil section.gouts figure.wp-block-gallery {
-    width:816px;
-    margin:48px auto;
+#page-accueil section.avis h3 {
+    color: var(--secondary-color);
+    font-weight: 800;
+    font-size:1.875rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+#page-accueil section.avis h4 {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size:1.875rem;
+    margin-bottom: 1rem;
+}
+
+#page-accueil section.avis p {
+    text-align: left;
+}
+
+#page-accueil .frise {
+    background-color: #ffffff;
 }
 
 /*********** Nous rencontrer ***********/
@@ -272,29 +319,16 @@ header nav ul li.bt-commander-nav a:hover {
     padding-bottom: 0rem;
 }
 
-#page-nous-rencontrer .frise {
-    overflow: hidden;
-    background-color: var(--bg-color);
-}
-
-#page-nous-rencontrer .frise figure {
-    width: 1440px;
-}
-
-#page-nous-rencontrer .frise img {
-    object-fit: none;
-}
-
-#page-nous-rencontrer .section-nous-contacter .form-illustration {
-    position: relative;
-    z-index: 0;
-}
-
 #page-nous-rencontrer figure.feuilles {
     position: absolute;
     z-index: -1;
     bottom:50px;
     left:-90px;
+}
+
+#page-nous-rencontrer .section-nous-contacter .form-illustration {
+    position: relative;
+    z-index: 0;
 }
 
 /*********** Commander ***********/
