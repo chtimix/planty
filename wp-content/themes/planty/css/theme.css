@@ -185,19 +185,51 @@ header nav ul li.bt-commander-nav a:hover {
     padding-left: 2.313rem;
 }
 
+
 /*********** Accueil ***********/
+
 
 #page-accueil h1, #page-accueil h2 {
     color: var(--secondary-color);
 }
 
-#page-accueil  section.title {
-    padding-top:7.188rem;
-    background-color: var(--bg-color);
+#page-accueil h1 {
+    margin-bottom: 50px;
 }
 
-#page-accueil section.title {
+#page-accueil  section.title {
+    width:100%;
+    height:900px;
+    padding-top:7.188rem;
+    background-color: var(--bg-color);
     border-radius: 0% 0% 50% 50% / 0% 0% 8% 8%;
+
+}
+
+#page-accueil section.title div.illustration {
+    position:relative;
+    width:710px;
+    height: 620px;
+    margin: 0 auto;
+}
+
+#page-accueil section.title figure.branche-gauche {
+    position: absolute;
+    bottom:80px;
+    left:0;
+
+}
+
+#page-accueil section.title figure.cannette {
+    position: absolute;
+    bottom:0;
+    z-index: 1;
+}
+
+#page-accueil section.title figure.branche-droite {
+    position: absolute;
+    bottom:80px;
+    right:10px;
 }
 
 #page-accueil section.energie-plantes p {
@@ -229,23 +261,33 @@ header nav ul li.bt-commander-nav a:hover {
     font-size:1.25rem;
 }
 
+#page-accueil section.avis {
+    padding-left: 8.25rem;
+    padding-right: 8.25rem;
+}
+
 #page-accueil section.avis h3 {
     color: var(--secondary-color);
     font-weight: 800;
     font-size:1.875rem;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 5.25rem;
 }
 
 #page-accueil section.avis h4 {
     color: var(--secondary-color);
     font-weight: 700;
     font-size:1.875rem;
-    margin-bottom: 1rem;
+    margin: 0.875rem 0;
 }
 
 #page-accueil section.avis p {
+    font-size: 1rem;
     text-align: left;
+}
+
+#page-accueil section.avis figure {
+    width:126px;
 }
 
 #page-accueil .frise {
