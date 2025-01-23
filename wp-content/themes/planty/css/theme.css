@@ -217,12 +217,14 @@ header nav ul li.bt-commander-nav a:hover {
     position: absolute;
     bottom:80px;
     left:0;
+    z-index: 0;
 
 }
 
 #page-accueil section.title figure.cannette {
     position: absolute;
     bottom:0;
+    left:160px;
     z-index: 1;
 }
 
@@ -230,6 +232,7 @@ header nav ul li.bt-commander-nav a:hover {
     position: absolute;
     bottom:80px;
     right:10px;
+    z-index: 0;
 }
 
 #page-accueil section.energie-plantes p {
@@ -241,6 +244,10 @@ header nav ul li.bt-commander-nav a:hover {
     background-color: var(--bg-color);
     border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
 
+}
+
+#page-accueil section.gouts .galerie-gouts {
+    padding: 20px 0;
 }
 
 #page-accueil section.gouts h3 {
