@@ -3,28 +3,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap');
 
-/*********** General ***********/
-* {
-    font-family: 'Syne', sans-serif !important;
-    font-weight: 400;
-}
-
+/*********** Variables globales ***********/
 :root {
     --primary-color: #DC9F96;
-    --light-primary-color: #E0B9B4;
-    --dark-primary-color: #D2776A;
-    --bg-color: #ECE2DA;
+    --primary-light: #E0B9B4;
+    --primary-dark: #D2776A;
     --secondary-color: #3B8E46;
-    --bt-order-hover: #C02E44;
+    --bg-color: #ECE2DA;
+    --highlight-hover: #C02E44;
+
+    --font-primary: 'Syne', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
 }
 
+/*********** Styles globaux ***********/
 body {
+    font-family: var(--font-primary);
+    font-weight: 400;
     display: flex;
     justify-content: center;
-    margin:0;
+    margin: 0;
+    padding: 0;
 }
 
-div#wrapper {
+#wrapper {
     width: 100%;
     max-width: 1440px;
     box-sizing: border-box;
@@ -33,7 +35,7 @@ div#wrapper {
 
 section {
     padding: 4.688rem 1.25rem;
-    margin:0 !important;
+    margin: 0 !important;
 }
 
 h1, h2, h3, p {
@@ -44,6 +46,7 @@ h1 {
     text-transform: uppercase;
     font-weight: 800;
     font-size: 2.375rem;
+    color: var(--secondary-color);
 }
 
 h2 {
@@ -58,34 +61,7 @@ h3 {
 
 p {
     font-size: 1.25rem;
-    line-height: normal;
-} 
-
-form p {
-    text-align: left;
-}
-
-.wp-element-button {
-    padding: 20px 55px;
-    font-size: 0.938rem;
-    font-weight: 400;
-    color:white;
-    border-radius: 5px !important;
-    border:none;
-    background-color: var(--light-primary-color);
-}
-
-.wp-element-button:hover {
-    background-color: var(--bt-order-hover);
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-header, footer {
-    font-size: 1rem;
+    line-height: 1.25;
 }
 
 :root :where(.is-layout-constrained) > * {
@@ -96,67 +72,78 @@ header, footer {
     gap: 0;
 }
 
-form input[type="text"],form input[type="email"], form textarea {
-    width: 383px;
-    height: 71px;
-    border-radius: 5px;
+/*********** Accessibilité ***********/
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus, button:focus, input:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/*********** Boutons ***********/
+.wp-element-button {
+    padding: 20px 55px;
+    font-size: 0.938rem;
+    font-weight: 400;
+    color: white;
+    border-radius: 5px !important;
+    border: none;
+    background-color: var(--primary-light);
+    transition: background-color 0.3s;
+}
+
+.wp-element-button:hover {
+    background-color: var(--highlight-hover);
+}
+
+/*********** Formulaires ***********/
+form input, form textarea {
+    width: 100%;
+    max-width: 383px;
+    border-radius: 5px !important;
     padding: 20px;
     margin-top: 0.938rem;
-    border:none;
-    font-family: 'Inter', sans-serif !important;
+    border: none;
+    font-family: var(--font-secondary) !important;
     font-size: 1rem;
-    font-style: normal;
 }
-
-form input {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 1rem;
-    font-style: normal;
-}
-
 
 form textarea {
     height: 237px;
 }
 
+form p {
+    text-align: left;
+}
+
 form label {
-    font-size:1.25rem;
+    font-size: 1.25rem;
 }
 
 form #submit {
     display: flex;
-    flex-direction: row;
     justify-content: center;
 }
 
-form .wpcf7-spinner {
-    display: none !important;
-    visibility: hidden !important;
+.wpcf7-not-valid {
+    border: 2px solid #D8000C; /* Bordure rouge autour du champ invalide */
+    background-color: #FFE6E6; /* Couleur de fond rouge clair */
 }
 
-/* frise */
-
-.frise {
-    overflow: hidden;
-    background-color: var(--bg-color);
-}
-
-.frise figure {
-    width: 1440px;
-}
-
-.frise img {
-    object-fit: none;
+.wpcf7-not-valid:focus {
+    outline: 2px solid #FF4D4D; /* Met en évidence le champ au focus */
 }
 
 
 /*********** Header ***********/
-
 header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding-left: 2.313rem;
 }
 
 header nav ul li, header nav ul li a {
@@ -165,73 +152,59 @@ header nav ul li, header nav ul li a {
 
 header nav ul li a {
     padding: 1.875rem;
-    
 }
+
 header nav ul li.bt-commander-nav a {
     padding: 1.875rem 3.75rem;
+    margin-left: 1.875rem;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 700;
+    transition: background-color 0.3s;
 }
 
 header nav ul li.bt-commander-nav a:hover {
-    background-color: var(--bt-order-hover);
+    background-color: var(--highlight-hover);
 }
-
-.bt-commander-nav {
-    margin-left: 1.875rem;
-    font-weight: 700;
-    color: #ffffff;
-    background-color: var(--primary-color);
-}
-#branding {
-    padding-left: 2.313rem;
-}
-
 
 /*********** Accueil ***********/
-
-
-#page-accueil h1, #page-accueil h2 {
+#page-accueil h1, #page-accueil h2, #page-accueil h3 {
     color: var(--secondary-color);
 }
 
-#page-accueil h1 {
-    margin-bottom: 50px;
-}
-
-#page-accueil  section.title {
-    width:100%;
-    height:900px;
-    padding-top:7.188rem;
+#page-accueil section.title {
+    width: 100%;
+    padding-top: 7.188rem;
     background-color: var(--bg-color);
     border-radius: 0% 0% 50% 50% / 0% 0% 8% 8%;
-
 }
 
 #page-accueil section.title div.illustration {
-    position:relative;
-    width:710px;
+    position: relative;
+    width: 710px;
     height: 620px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 #page-accueil section.title figure.branche-gauche {
     position: absolute;
-    bottom:80px;
-    left:0;
+    bottom: 50px;
+    left: 0;
     z-index: 0;
-
 }
 
 #page-accueil section.title figure.cannette {
     position: absolute;
-    bottom:0;
-    left:160px;
+    bottom: -30px;
+    left: 160px;
     z-index: 1;
 }
 
 #page-accueil section.title figure.branche-droite {
     position: absolute;
-    bottom:80px;
-    right:10px;
+    bottom: 50px;
+    right: 10px;
     z-index: 0;
 }
 
@@ -243,29 +216,24 @@ header nav ul li.bt-commander-nav a:hover {
 #page-accueil section.gouts {
     background-color: var(--bg-color);
     border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
+}
 
+#page-accueil section.gouts h3 {
+    color: var(--primary-dark);
+    font-weight: 800;
+    font-size: 1.875rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 
 #page-accueil section.gouts .galerie-gouts {
     padding: 20px 0;
 }
 
-#page-accueil section.gouts h3 {
-    color: var(--dark-primary-color);
-    font-weight: 800;
-    font-size:1.875rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
-
 #page-accueil section.gouts h4 {
     font-weight: 800;
     font-size:3rem;
     text-transform: uppercase;
-}
-
-#page-accueil section.gouts p {
-    font-size:1.25rem;
 }
 
 #page-accueil section.avis {
@@ -301,37 +269,13 @@ header nav ul li.bt-commander-nav a:hover {
     background-color: #ffffff;
 }
 
+
 /*********** Nous rencontrer ***********/
 
-#page-nous-rencontrer .section-title, #page-nous-rencontrer .section-nous-contacter {
-    background-color: var(--bg-color);
-}
-
-#page-nous-rencontrer .section-title {
-    padding-top: 12rem;
-}
-
-#page-nous-rencontrer .titre-illustration {
-    display: inline-block;
-    width:55%;
-    position: relative;
-}
-
 #page-nous-rencontrer h1 {
-    color: var(--dark-primary-color);
+    color: var(--primary-dark);
+    margin-bottom: 2.813rem;
 }
-
-#page-nous-rencontrer .section-title figure {
-    position:absolute;
-    top:-120px;
-    left:-190px;
-}
-
-#page-nous-rencontrer .section-title p {
-    width:55%;
-    margin-top:2.5rem;
-}
-
 
 #page-nous-rencontrer h2 {
     margin-bottom: 2.813rem;
@@ -341,18 +285,37 @@ header nav ul li.bt-commander-nav a:hover {
     margin: 1.875rem 0 0.938rem 0;
 }
 
+#page-nous-rencontrer .section-title,
+#page-nous-rencontrer .section-nous-contacter {
+    background-color: var(--bg-color);
+}
+
 #page-nous-rencontrer .section-title {
+    padding-top: 12rem;
     border-radius: 0% 0% 33% 33% / 0% 0% 33% 33%;
 }
 
-#page-nous-rencontrer form p {
-    margin-bottom: 1.563rem;
+#page-nous-rencontrer .titre-illustration {
+    display: inline-block;
+    width: 55%;
+    position: relative;
+}
+
+#page-nous-rencontrer .section-title figure {
+    position: absolute;
+    top: -120px;
+    left: -190px;
+}
+
+#page-nous-rencontrer .section-title p {
+    width: 55%;
 }
 
 #page-nous-rencontrer .section-equipe {
     position:relative;
     background-color: transparent;
 }
+
 #page-nous-rencontrer .section-equipe .membres-equipe {
     z-index:1;
 }
@@ -368,28 +331,42 @@ header nav ul li.bt-commander-nav a:hover {
     padding-bottom: 0rem;
 }
 
-#page-nous-rencontrer figure.feuilles {
-    position: absolute;
-    z-index: -1;
-    bottom:50px;
-    left:-90px;
+#page-nous-rencontrer .form-illustration {
+    min-width: 475px;
 }
+
+#page-nous-rencontrer form {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#page-nous-rencontrer form p {
+    margin-bottom: 1.563rem;
+}
+
 
 #page-nous-rencontrer .section-nous-contacter .form-illustration {
     position: relative;
     z-index: 0;
 }
 
+#page-nous-rencontrer figure.feuilles {
+    position: absolute;
+    z-index: -1;
+    top:410px;
+    left:-40px;
+}
+
 /*********** Commander ***********/
-
-
 #page-commander {
-    color:white;
+    color: white;
     background-color: var(--secondary-color);
     padding: 0;
 }
 
 #page-commander h1 {
+    color:white;
     margin-bottom: 4.688rem;
 }
 
@@ -398,23 +375,8 @@ header nav ul li.bt-commander-nav a:hover {
     margin-bottom: 2.5rem;
 }
 
-#page-commander #produits input {
-    margin-top:0.938rem;
-    height: 56px;
-    width:39px;
-    text-align: center;
-}
-
-/* affichage spin button produit */
-#page-commander input[type="number"]::-webkit-inner-spin-button,
-#page-commander input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: auto;
-    appearance: auto;
-    opacity: 1;
-}
-
 #page-commander form {
-    width: 860px;
+    max-width: 54rem; 
     margin: 0 auto;
 }
 
@@ -428,14 +390,14 @@ header nav ul li.bt-commander-nav a:hover {
 }
 
 #page-commander #produits {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 #page-commander .produit {
-    width: 192px;
-    display:flex;
+    width: 12rem; 
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 2.5rem;
@@ -446,11 +408,29 @@ header nav ul li.bt-commander-nav a:hover {
     height: auto;
 }
 
+#page-commander #produits input {
+    margin-top:0.938rem;
+    height: 56px;
+    min-width:39px;
+    padding:0;
+    text-align: center;
+    border-radius: 0 !important;
+}
+
+/* affichage spin button produit */
+#page-commander input[type="number"]::-webkit-inner-spin-button,
+#page-commander input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: auto;
+    appearance: auto;
+    opacity: 1;
+}
+
 #page-commander #infos-livraison {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    position:relative;
+    position: relative;
+    gap: 2rem;
 }
 
 #page-commander #infos-livraison p {
@@ -465,19 +445,27 @@ header nav ul li.bt-commander-nav a:hover {
     bottom: 0;
     left: 50%;
     width: 1px;
-    background-color: #ffffff; /* Le filet */
+    background-color: white;
     transform: translateX(-50%);
     margin-top: 2.813rem;
     margin-bottom: 2.5rem;
 }
 
-#page-commander #infos, #page-commander #livraison {
-    width: 383px;
+/*********** Frise ***********/
+.frise {
+    overflow: hidden;
+    background-color: var(--bg-color);
 }
 
+.frise figure {
+    width: 1440px;
+}
+
+.frise img {
+    object-fit: none;
+}
 
 /*********** Footer ***********/
-
 footer {
     text-align: center;
     padding: 1.875rem;
@@ -485,4 +473,29 @@ footer {
 
 footer p {
     font-size: 1rem;
+}
+
+/*********** Media Queries ***********/
+
+@media (max-width: 768px) {
+    #page-commander form {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    #page-commander #produits {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    #page-commander #infos-livraison {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    #page-commander .produit {
+        width: 100%;
+        max-width: 20rem;
+    }
 }
