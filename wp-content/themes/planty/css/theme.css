@@ -36,6 +36,7 @@ body {
 section {
     padding: 4.688rem 1.25rem;
     margin: 0 !important;
+    overflow: hidden;
 }
 
 h1, h2, h3, p {
@@ -62,6 +63,11 @@ h3 {
 p {
     font-size: 1.25rem;
     line-height: 1.25;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 :root :where(.is-layout-constrained) > * {
@@ -236,11 +242,6 @@ header nav ul li.bt-commander-nav a:hover {
     text-transform: uppercase;
 }
 
-#page-accueil section.avis {
-    padding-left: 8.25rem;
-    padding-right: 8.25rem;
-}
-
 #page-accueil section.avis h3 {
     color: var(--secondary-color);
     font-weight: 800;
@@ -254,6 +255,11 @@ header nav ul li.bt-commander-nav a:hover {
     font-weight: 700;
     font-size:1.875rem;
     margin: 0.875rem 0;
+}
+
+#page-accueil section.avis .cols-avis {
+    max-width:1171px;
+    margin: 0 auto;
 }
 
 #page-accueil section.avis p {
@@ -478,6 +484,17 @@ footer p {
 /*********** Media Queries ***********/
 
 @media (max-width: 768px) {
+
+    #page-accueil section.avis .cols-avis {
+        width:70%;
+        margin: 0 auto;
+    }
+
+    #page-commander h2 {
+        text-align: center;
+    }
+
+
     #page-commander form {
         max-width: 100%;
         padding: 1rem;
@@ -498,4 +515,30 @@ footer p {
         width: 100%;
         max-width: 20rem;
     }
+
+    #page-commander #vos-infos, 
+    #page-commander #livraison {
+        margin: 0 auto;
+    }
+
+    #page-commander #infos-livraison::before {
+        content: none;
+        display:none;
+    }
+
+    #page-commander #vos-infos {
+        border-bottom:1px solid white;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    #page-accueil section.title {
+        border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
+    }
+    #page-nous-rencontrer .section-title {
+        border-radius: 0% 0% 50% 50% / 0% 0% 12% 12%;
+    }
+
 }
