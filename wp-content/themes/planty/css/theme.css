@@ -12,12 +12,13 @@
 4.  Boutons
 5.  Formulaires
 6.  Header
-7.  Footer
+7.  Menu "hamburger" (toggle menu)
+8.  Footer
     Pages
-8.  --- Accueil
-9.  --- Nous rencontrer
-10. --- Commander
-11. Media Queries 
+9.  --- Accueil
+10. --- Nous rencontrer
+11. --- Commander
+12. Media Queries 
 
 */
 
@@ -203,7 +204,84 @@ header nav ul li.bt-commander-nav a:hover {
 }
 
 
-/*********** 7. Footer ***********/
+/*********** 7. Menu hamburger (toggle menu) ***********/
+
+/* Styles pour le bouton hamburger */
+#menu-toggle {
+    display: none; /* Cacher la checkbox */
+}
+
+#hamburger {
+    display: none; /* Caché par défaut */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+/* Styles pour les petits écrans */
+@media (max-width: 800px) {
+    #hamburger {
+        display: flex; /* Afficher le bouton hamburger */
+        z-index: 1000;
+    }
+
+    #menu {
+        display: none; /* Cacher le menu par défaut */
+        position: absolute;
+        top: 80px; /* Ajustez en fonction de la hauteur de votre header */
+        right: 0;
+        background: white;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        z-index: 999;
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Afficher le menu lorsque la checkbox est cochée */
+
+    header {
+        padding: 1.875rem 1.25rem;
+        position:relative;
+    }
+    #menu-toggle:checked ~ #menu {
+        display: flex;
+    }
+
+    header nav ul li, header nav ul li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        padding: 1rem 0;
+    }
+
+    header nav ul li.bt-commander-nav a {
+        margin-left: 0;
+        padding: 1rem 0;
+        background: none;
+        color: var(--primary-dark);
+    }
+    header nav ul li.bt-commander-nav a:hover {
+        color: var(--primary-dark);
+        background-color: transparent;
+    }
+}
+
+/*********** 8. Footer ***********/
 
 footer p {
     text-align: center;
@@ -213,7 +291,7 @@ footer p {
 }
 
 
-/*********** 8. Page Accueil ***********/
+/*********** 9. Page Accueil ***********/
 
 #page-accueil h1, #page-accueil h2, #page-accueil h3 {
     color: var(--secondary-color);
@@ -325,7 +403,7 @@ footer p {
 }
 
 
-/*********** 9. Page Nous rencontrer ***********/
+/*********** 10. Page Nous rencontrer ***********/
 
 #page-nous-rencontrer h1 {
     color: var(--primary-dark);
@@ -417,7 +495,7 @@ footer p {
 }
 
 
-/*********** 10. Page Commander ***********/
+/*********** 11. Page Commander ***********/
 
 #page-commander {
     color: white;
@@ -512,7 +590,7 @@ footer p {
 }
 
 
-/*********** 11. Media Queries ***********/
+/*********** 12. Media Queries ***********/
 
 @media (max-width: 430px) {
 
