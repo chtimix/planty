@@ -447,10 +447,15 @@ footer p {
 #page-nous-rencontrer .section-equipe {
     position:relative;
     background-color: transparent;
+    padding-bottom: 2.813rem;
 }
 
 #page-nous-rencontrer .section-equipe .membres-equipe {
     z-index:1;
+}
+
+#page-nous-rencontrer .section-equipe .membre {
+    margin-bottom: 1.875rem;
 }
 
 #page-nous-rencontrer .section-equipe figure.branche {
@@ -611,35 +616,53 @@ footer p {
         padding: 10px;
         margin-top: 0.5rem;
     }
+    footer p {
+        padding: 1rem 0;
+    }
 
     /* Page Accueil */
     #page-accueil section.title {
         padding-top: 3rem;
+        border-radius: 0% 0% 50% 50% / 0% 0% 15px 15px;
     }
     #page-accueil section.energie-plantes p {
         width:85%;
         margin-top: 1.75rem !important;
         font-size:1rem;
     }
-    
+    #page-accueil section.gouts {
+        border-radius: 0% 0% 50% 50% / 0% 0% 10px 10px;
+    }
     #page-accueil section.gouts .galerie-gouts {
         padding: 10px 0 !important;
     }
     #page-accueil section.gouts h4 {
         font-size:2rem !important;
     }
-    #page-accueil .col-avis {
+    #page-accueil section.avis {
+        padding-bottom: 10rem;
+        background-size: 75%;
+    }
+    #page-accueil .cols-avis {
         width: 100%;
-        display: flex;
-        flex-direction: column;
+    }
+    #page-accueil .col-avis {
+        max-width: 325px;
+        margin-right:auto;
+        margin-left:auto;
     }
     #page-accueil section.avis h3 {
         margin-bottom: 2rem;
     }
-    
+    #page-accueil section.avis h4 {
+        font-size: 1.25rem;
+        margin: 0.5rem 0;
+    }
+
     /* Page Nous rencontrer */
     #page-nous-rencontrer .section-title {
         padding-top: 6rem;
+        border-radius: 0% 0% 50% 50% / 0% 0% 20px 20px;
     }
     #page-nous-rencontrer .titre-illustration {
         width: 95%;
@@ -655,6 +678,24 @@ footer p {
     }
     #page-nous-rencontrer .section-title p {
         width:80%;
+    }
+    #page-nous-rencontrer .section-equipe figure.branche {
+        right:-25px;
+    }
+    #page-nous-rencontrer .section-nous-contacter {
+        padding-bottom: 6rem;
+        background-size: 75%;
+    }
+    #page-nous-rencontrer .form-illustration {
+        min-width: 280px;
+    }
+    #page-nous-rencontrer figure.feuilles {
+        top:350px;
+        left:-85px;
+    }
+    /* Page Commander */
+    #page-commander h1 {
+        margin-bottom: 2.25rem;
     }
 
 }
@@ -675,10 +716,7 @@ footer p {
         width: 54%;
     }
     
-    #page-accueil section.avis .cols-avis {
-        width:70%;
-        margin: 0 auto;
-    }
+    
 
     #page-commander h2 {
         text-align: center;
@@ -686,7 +724,6 @@ footer p {
 
     #page-commander form {
         max-width: 100%;
-        padding: 1rem;
     }
 
     #page-commander #produits {
