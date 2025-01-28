@@ -10,8 +10,8 @@
     <div id="wrapper" class="hfeed">
         <header id="header" role="banner">
             <div id="branding">
-                    <a href="http://<?php echo $_SERVER['HTTP_HOST'].'/planty';?>">
-                        <img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/planty/wp-content/themes/planty/images/logo-planty.png" alt="Logo planty" >
+                    <a href="<?php echo get_site_url();?>">
+                        <img src="<?php echo get_stylesheet_directory_uri();?>/images/logo-planty.png" alt="Logo planty" >
                     </a>
             </div>
             <nav id="menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
