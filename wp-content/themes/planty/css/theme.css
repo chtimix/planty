@@ -602,7 +602,6 @@ footer p {
     section {
         padding: 2.5rem 1.25rem;
     }
-
     h1 {
         font-size: 1.375rem;
     }
@@ -626,7 +625,6 @@ footer p {
         border-radius: 0% 0% 50% 50% / 0% 0% 15px 15px;
     }
     #page-accueil section.energie-plantes p {
-        width:85%;
         margin-top: 1.75rem !important;
         font-size:1rem;
     }
@@ -645,11 +643,6 @@ footer p {
     }
     #page-accueil .cols-avis {
         width: 100%;
-    }
-    #page-accueil .col-avis {
-        max-width: 325px;
-        margin-right:auto;
-        margin-left:auto;
     }
     #page-accueil section.avis h3 {
         margin-bottom: 2rem;
@@ -693,6 +686,7 @@ footer p {
         top:350px;
         left:-85px;
     }
+
     /* Page Commander */
     #page-commander h1 {
         margin-bottom: 2.25rem;
@@ -702,60 +696,74 @@ footer p {
 
 @media (max-width: 768px) {
 
+    /* Page Accueil */
     #page-accueil section.title div.illustration {
         width: 90vw; /* Occupe 90% de la largeur de l'écran */
         height: calc(90vw * 0.87); /* Maintient le ratio d'origine (710px x 620px) */
     }
-
     #page-accueil section.title figure.branche-gauche,
     #page-accueil section.title figure.branche-droite {
         width: 49.3%;
     }
-    
     #page-accueil section.title figure.cannette {
         width: 54%;
     }
-    
+    #page-accueil .col-avis {
+        max-width: 345px;
+        margin-right:auto;
+        margin-left:auto;
+    }
+    /* Page Nous rencontrer */
+
     
 
+    /* Page Commander */
     #page-commander h2 {
         text-align: center;
     }
-
     #page-commander form {
         max-width: 100%;
     }
-
     #page-commander #produits {
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
     }
-
     #page-commander #infos-livraison {
         flex-direction: column;
         gap: 1.5rem;
     }
-
     #page-commander .produit {
         width: 100%;
         max-width: 20rem;
     }
-
     #page-commander #vos-infos, 
     #page-commander #livraison {
         margin: 0 auto;
     }
-
     #page-commander #infos-livraison::before {
         content: none;
         display:none;
     }
-
     #page-commander #vos-infos {
         border-bottom:1px solid white;
     }
 
 }
+
+@media (max-width: 1023px) {
+
+    /* Page Accueil */
+    #page-accueil section.energie-plantes p {
+        width:80%;
+    }
+    #page-accueil .col-avis {
+        max-width: 345px;
+        margin-right:auto;
+        margin-left:auto;
+    }
+
+}
+
 
 
