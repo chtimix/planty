@@ -48,6 +48,9 @@ body {
     margin: 0;
     padding: 0;
 }
+body.home #container {
+    padding-bottom:100px;
+}
 
 #wrapper {
     width: 100%;
@@ -282,6 +285,13 @@ header nav ul li.bt-commander-nav a:hover {
 }
 
 /*********** 8. Footer ***********/
+body:not(.page-template-template-commander) footer {
+    background-image: url("../images/cannettes-pattern.png");
+    background-position: top;
+    background-repeat: repeat-x;
+    padding-top: 7rem;
+    margin-top: -112px;
+}
 
 footer p {
     text-align: center;
@@ -394,14 +404,6 @@ footer p {
     width:126px;
 }
 
-#page-accueil section.avis {
-    background-color: #ffffff;
-    background-image: url("../images/cannettes-pattern.png");
-    background-position: bottom;
-    background-repeat: repeat-x;
-    padding-bottom: 15rem;
-}
-
 
 /*********** 10. Page Nous rencontrer ***********/
 
@@ -465,14 +467,6 @@ footer p {
     right:30px;
 }
 
-#page-nous-rencontrer .section-nous-contacter {
-    background-color: var(--bg-color);
-    background-image: url("../images/cannettes-pattern.png");
-    background-position: bottom;
-    background-repeat: repeat-x;
-    padding-bottom: 11rem;
-}
-
 #page-nous-rencontrer .form-illustration {
     min-width: 475px;
 }
@@ -490,6 +484,10 @@ footer p {
 #page-nous-rencontrer .section-nous-contacter .form-illustration {
     position: relative;
     z-index: 0;
+}
+
+#page-nous-rencontrer .section-nous-contacter {
+    padding-bottom: 8rem;
 }
 
 #page-nous-rencontrer figure.feuilles {
@@ -638,8 +636,7 @@ footer p {
         font-size:2rem !important;
     }
     #page-accueil section.avis {
-        padding-bottom: 10rem;
-        background-size: 75%;
+        padding-bottom: 6rem;
     }
     #page-accueil .cols-avis {
         width: 100%;
@@ -676,7 +673,7 @@ footer p {
         right:-25px;
     }
     #page-nous-rencontrer .section-nous-contacter {
-        padding-bottom: 6rem;
+        padding-bottom: 9rem;
         background-size: 75%;
     }
     #page-nous-rencontrer .form-illustration {
@@ -713,10 +710,7 @@ footer p {
         margin-right:auto;
         margin-left:auto;
     }
-    /* Page Nous rencontrer */
-
     
-
     /* Page Commander */
     #page-commander h2 {
         text-align: center;
