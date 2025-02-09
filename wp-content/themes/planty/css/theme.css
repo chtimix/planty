@@ -285,6 +285,7 @@ header nav ul li.bt-commander-nav a:hover {
 }
 
 /*********** 8. Footer ***********/
+
 body:not(.page-template-template-commander) footer {
     background-image: url("../images/cannettes-pattern.png");
     background-position: top;
